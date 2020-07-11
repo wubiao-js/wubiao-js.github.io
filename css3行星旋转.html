@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #555;
+        }
+
+        .box {
+            width: 460px;
+            height: 460px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #eee;
+            border-radius: 50%;
+            position: absolute;
+            top: 120px;
+            left: 130px;
+            animation: oxp 12s infinite linear;
+            animation-play-state: running;
+        }
+
+        .box2 .box3 {
+            width: 100px;
+            height: 100px;
+            background: #fc4007;
+            border-radius: 50%;
+            box-shadow: 0 0 12px rgb(204, 56, 11);
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+
+        .box2 .box4 {
+            width: 85px;
+            height: 85px;
+            border: 1px solid #eee;
+            border-radius: 50%;
+            position: absolute;
+            top: -35px;
+            left: 16px;
+            animation: oxp 12s infinite linear;
+            animation-play-state: running;
+        }
+        .boop {
+            width: 50px;
+            height: 50px;
+            background: #2c6cf5;
+            border-radius: 50%;
+            box-shadow: 0 0 12px pink;
+            position: absolute;
+            top: 19px;
+            left: 18px;
+            animation: inherit;
+            animation-direction: reverse;
+            animation-play-state: running;
+        }
+
+        .end {
+            width: 30px; 
+            height: 30px;
+             background: #b9c3e8;
+              border-radius: 50%;
+               box-shadow: 0 0 12px #ccdbe4;
+               position: absolute;
+               top: -4px;
+               left: 0;
+               animation: oxp 2s infinite linear;
+               animation-play-state:running;
+               }
+
+        .text {
+            color: #fff;
+            text-shadow: 0 8px 9px #c4b59d;
+            position: absolute;
+            top: 12px;
+            left: 5px;
+            animation:inherit;
+            animation-direction: reverse;
+            animation-play-state: running;
+        }
+        @keyframes oxp{
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        div:hover,
+        div:focus,
+        .text:hover,
+        .text:focus,
+        .end:hover,
+        .end:focus {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box2">
+            <div class="box3"></div>
+            <div class="box4">
+                <div class="boop">
+                    <span class="text"></span>
+                </div>
+                <div class="end"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

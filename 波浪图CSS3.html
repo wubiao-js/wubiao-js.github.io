@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,div,p{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 174px;
+            height: 174px;
+            border-radius: 50%;
+            border: 2px solid #fe810c;
+            float: left;
+            position: relative;
+            top: 100px;
+            left:500px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .box2{
+            text-align: center;
+            margin-top: 40px;
+            color: #fe810c;
+        }
+        .buu{
+            font-size: 30px;
+        }
+        .wan{
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: url(./img2/bowen.png) repeat-x;
+            animation: ed 4s linear infinite;
+        }
+        .s1{
+            opacity: .5;
+            background-position: 120px 0px;
+            animation: ed 10s linear infinite;
+        }
+        .s2{
+            opacity: .3;
+            background-position: 60px 0px;
+            animation: ed 8s linear infinite;
+        }
+        @keyframes ed{
+            0%{
+                background-position: 0px 0px;
+            }
+            100%{
+                background-position: 532px 0px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="box">
+        <div class="box2">
+            <p class="buu">FACK</p>
+            <p>BBC</p>
+        </div>
+        <div class="wan s1"></div>
+        <div class="wan s2"></div>
+        <div class="wan"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height:100%;
+            margin: 0;
+            padding: 0;
+            background-color: skyblue;
+            perspective: 1500px;
+            font-family: "Asar",serif;
+        }
+        .box2{
+            width: 250px;
+            height: 300px;
+            border-radius:10px;
+            perspective: 1500px;
+            transition: box-shadow 0.5s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transform-style:preserve-3d ;
+            box-shadow: 5px 5px 24px 0px rgba(0, 0,0, 0.2);
+        }
+        .box2 h2,.box2 h3,.box2 p{
+            transform: translateZ(2px);
+            color:white;
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+            font-weight: 300;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .box2 h2{
+            margin: 20px 0 0 0 ;
+
+        }
+        .box2 h3{
+            margin: 10px 0 40px 0;
+        }
+        .box2 p{
+            margin: 0px 0 30px 0;
+        }
+        .box2 .box4{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            transform-style: preserve-3d;
+            transform:translateZ(2px);
+            transition: transform 0.5s ease-in-out;
+        }
+        .box2 .box3{
+            position: absolute;
+            transform: translateZ(1px);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("1.jpg") no-repeat center center;
+            background-size: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease-in-out;
+            overflow: hidden;
+        }
+        .box2 .box3:after{
+            position: absolute;
+            content: ' ';
+            display: block;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0,0, 0.2);
+            transition: background-color 0.5s ease-in-out;
+        }
+        .box2 .bar{
+            will-change: height;
+            width: 15px;
+            height: 1px;
+            background-color: white;
+            transform:translateX(-7.5) rotateX(-90deg);
+            transform-origin: 100% 100%;
+            transition:height 0.5s ease-in-out,margin 0.5s ease-in-out;
+            transform-style: preserve-3d;
+            margin: 6px;
+            position:relative;
+            background: linear-gradient(to bottom,#feffff 0%,#ddf1f9 0%,#a0d8ef 100%);
+
+        }
+        .box2 .bar:after{
+            width: 15px;
+            height: 100%;
+            display: block;
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -15px;
+            background-color: grey;
+            transform:rotateY(90deg);
+            transform-origin: 0% 50%;
+            background: linear-gradient(to bottom, #feffff 0%, #85d7f7 0%, #4c8596 100%);
+        }
+        .box2 .bar:before{
+            font-family: "Oxygen",sans-serif;
+            display: block;
+            content: ' ';
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            top: -15px;
+            left: 0;
+            background-color: white;
+            transform:rotateX(90deg) ;
+            transform-origin: 0% 100%;
+            color:white;
+            text-align: center;
+            font-size: 10px;
+            line-height: 14px;
+            padding: 0;
+            transition: color 0.3s ease-in-out;
+        }
+        .box2 .bar.bar1:before{
+            content: "F";
+        }
+        .box2 .bar.bar2:before{
+            content: "A";
+        }
+        .box2 .bar.bar3:before{
+            content: "C";
+        }
+        .box2 .bar.bar4:before{
+            content: "O";
+        }
+        .box2 .bar.bar5:before{
+            content: "P";
+        }
+        .box2 .bar.bar6:before{
+            content: "P";
+        }
+        .box2 .bar.bar7:before{
+            content: "K";
+        }
+        .box2 .bar span{
+            font-family: "Oxygen",sans-serif;
+            position: absolute;
+            transform: rotateZ(-90deg);
+            border-radius: 2px;
+            transform-origin: 0% 100%;
+            top: 20px;
+            left: 18px;
+            white-space: nowrap;
+            text-align: right;
+            padding: 5px;
+            color: tomato;
+            font-size: 10px;
+            opacity: 0;
+            transition:opacity 0.5s ease-in-out;
+        }
+
+        .occ .box2{
+            transform: rotateX(60deg) translateY(150px);
+      box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.75);
+        } 
+        .occ .box2 .box4{
+            transform: rotateZ(40px) translateY(50px);
+        }
+        .occ .box2 .bar{
+            transform: translateX(-7.5px) rotateX(-90deg) rotateY(-25deg);
+        }
+
+        .occ .box2 .bar.bar1{
+            height: 150px;
+            transition-delay: 0.3s;
+            margin-top: -150px;
+        }
+        .occ .box2 .bar.bar2{
+            height: 75px;
+            transition-delay: 0.2s;
+            margin-top: -75px;
+        }
+        .occ .box2 .bar.bar3{
+            height: 112.5px;
+            transition-delay: 0.1s;
+            margin-top: -112.5px;
+        }
+        .occ .box2 .bar.bar4{
+            height: 180px;
+            transition-delay: 0s;
+            margin-top: -180px;
+        }
+        .occ .box2 .bar.bar5{
+            height: 52.5px;
+            transition-delay: 0.1s;
+            margin-top: -52.5px;
+        }
+        .occ .box2 .bar.bar6{
+            height: 52.5px;
+            transition-delay: 0.2s;
+            margin-top: -52.5px;
+        }
+        .occ .box2 .bar.bar7{
+            height: 75px;
+            transition-delay: 0.3s;
+            margin-top: -75px;
+        }
+        .occ .box2 .bar span {
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
+
+    .occ .box2 .bar:before {
+      color: black;
+    }
+
+    .occ .box2 .photo {
+      transform: translateZ(20px);
+    }
+
+    .occ .box2 .photo:after {
+      background-color: rgba(0, 50, 100, 0.8);
+    }
+
+    .occ .box2 h2 {
+      opacity: 0;
+      transform: translateZ(40px) translateY(-100px);
+    }
+
+    .occ .box2 p {
+      opacity: 0;
+      transform: translateZ(40px) translateY(-80px);
+    }
+
+    .occ .box2 h3 {
+      transform: translateZ(60px) translateY(100px);
+    }
+
+    .box {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(120deg, rgba(50, 150, 100, 0.4), rgba(0, 0, 100, 0));
+    }
+
+    .box:before,
+    .box:after {
+      position: absolute;
+      content: " ";
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(0deg, rgba(0, 0, 200, 0.4), rgba(0, 0, 200, 0));
+    }
+
+    .box:after {
+      background: linear-gradient(240deg, rgba(150, 50, 50, 0.4), rgba(0, 0, 200, 0));
+    }
+
+    .info {
+      font-family: 'Oxygen', sans-serif;
+      color: white;
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box2">
+            <div class="box3"></div>
+            <h2>FACK</h2>
+            <p>THIS WEEK</p>
+            <div class="box4">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+                <div class="bar bar4"></div>
+                <div class="bar bar5"></div>
+                <div class="bar bar6"></div>
+                <div class="bar bar7"></div>
+            </div>
+            <h3>93,000</h3>
+        </div>
+    </div>
+    <script>
+        var vbb =document.body;
+        var title=false;
+        var tog=()=>{
+            title=!title;
+            if(title){
+                vbb.classList.add('occ');
+            }
+            else{
+                vbb.classList.remove('occ');
+            }
+        };
+        vbb.addEventListener('click',tog);
+        vbb.addEventListener('touchstart',tog);
+        if(location.pathname.match(/fullcpgrid/i))
+        setTimeout(tog,1000);
+    </script>
+</body>
+</html>

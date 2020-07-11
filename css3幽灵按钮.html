@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: dodgerblue;
+            transition: 1s all linear;
+            text-align: center;
+            line-height: 170px;
+            margin: 100px auto;
+            color:white;
+            position:relative;
+            font-size:32px;
+            font-weight: bold;
+        }
+        .box2{
+            position: absolute;
+            left:0;
+            top:0;
+            width:0;
+            height:10px;
+            transition: 1s;
+        }
+        .box3{
+            position: absolute;
+            right:0;
+            bottom:0;
+            width:0;
+            height:10px;
+            transition: 1s;
+        }
+        .box4{
+            position: absolute;
+            left: 0;
+            bottom:0;
+            width: 10px;
+            height:0;
+            transition: 1s 1s;
+        }
+        .box5{
+            position:absolute;
+            right:0;
+            top:0;
+            width:10px;
+            height: 0;
+            transition: 1s 1s;
+        }
+        .box1:hover{
+            background:transparent ;
+            color:dodgerblue;
+        }
+        .box1:hover .box2,.box1:hover .box3{
+            width: 200px;
+            background: dodgerblue;
+        }
+        .box1:hover .box4,.box1:hover .box5{
+            background: dodgerblue;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box4"></div>
+        边框出现
+        <div class="box3"></div>
+        <div class="box5"></div>
+    </div>
+</body>
+</html>

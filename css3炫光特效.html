@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: black;
+        }
+        #box{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .box1{
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+        }
+        .cov{
+            display: block;
+            width: 20.5em;
+            height: 8.5em;
+            position: absolute;
+            font-size: 10px;
+        }
+        .boo1{
+            left:10%;
+            top: 5%;
+            color: red;
+            transform: scale(0.6);
+        }
+        .boo2{
+            left: 65%;
+            top: 10%;
+            color:skyblue;
+            transform: scale(0.7);
+        }
+        .boo3{
+            left: 60%;
+            top: 35%;
+            color:green;
+            transform: scale(0.8);
+        }
+        .boo4{
+            left: 15%;
+            top: 30%;
+            color:yellowgreen;
+            transform: scale(1);
+        }
+        .boo5{
+            left: 25%;
+            top: 20%;
+            color:rgb(16, 206, 26);
+            transform: scale(1);
+        }
+        .boo6{
+            left: 35%;
+            top: 34%;
+            color:rgb(209, 12, 193);
+            transform: scale(1);
+        }
+        .boo7{
+            left: 40%;
+            top: 38%;
+            color:rgb(224, 134, 15);
+            transform: scale(1);
+        }
+        .bnm,.bnm2{
+            display: block;
+            width: 8.5em;
+            height: 8.5em;
+            position: absolute;
+        }
+        .bnm2{
+            transform: rotate(45deg);
+        }
+        .drop{
+            display: block;
+            width: 5em;
+            height: 2em;
+            overflow: hidden;
+            position: absolute;
+            opacity: 0;
+        }
+        .drop::before{
+            display: block;
+            width: 1em;
+            height: 1em;
+            background: currentColor;/* 当前的标签所继承的文字颜色 */
+            border-radius: 50%;
+            content: '';
+        }
+        .drop::after{
+            content: '';
+            display: block;
+            position: relative;
+            width: 0;
+            height: 0;
+            top: -0.4em;
+            border-top:1.4em solid currentColor;
+            border-left:0.5em solid transparent;
+            border-right:0.5em solid transparent;
+        }
+        /* 烟花绽放的次数，速度，以及方式 */
+        .drop1{
+            left:3.45em;
+            top:0;
+            animation: obb1 1.5s ease-in-out infinite;
+        }
+        .drop2{
+            left:3.05em;
+            top:0;
+            animation: obb2 1.5s ease-in-out infinite;
+        }
+        .drop3{
+            left:2.60em;
+            top:0;
+            animation: obb3 1.5s ease-in-out infinite;
+        }
+        .drop4{
+            left: 2.25em;
+            top: 0;
+            animation: obb4 1.5s ease-in-out infinite;
+        }
+        .drop5{
+            left: 3.05em;
+            top: 0;
+            animation: obb5 1.5s ease-in-out infinite;
+        }
+        .drop6{
+            left: 2.05em;
+            top: 0;
+            animation: obb6 1.5s ease-in-out infinite;
+        }
+        .drop7{
+            left: 1.95em;
+            top: 0;
+            animation: obb7 1.5s ease-in-out infinite;
+        }
+
+        /* 设定延迟的时间 */
+        .coo0 .drop{
+            animation-delay: 1s;
+        }
+        .coo1 .drop{
+            animation-delay: 1s;
+        }
+        .coo2 .drop{
+            animation-delay: 2s;
+        }
+        .cooz .drop{
+            animation-delay: 1.2s;
+        }
+        .coox .drop{
+            animation-delay: 1.3s;
+        }
+        .cooc .drop{
+            animation-delay: 1.4s;
+        }
+        .coov .drop{
+            animation-delay: 1.6s;
+        }
+
+        /* 动画开始 */
+        @keyframes obb1{
+            0%{
+                top: 3.25em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                top: -0.75em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3);
+            }
+        }
+        @keyframes obb2{
+            0%{
+                right: 3.75em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(45deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(45deg);
+            }
+            100%{
+                right: -0.25em;
+                opacity: 0;
+                transform: scale(0.3) rotate(45deg);
+            }
+        }
+        @keyframes obb3{
+            0%{
+                bottom: 3.25em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(90deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(90deg);
+            }
+            100%{
+                bottom: -0.75em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(90deg);
+            }
+        }
+        @keyframes obb4{
+            0%{
+                left: 3.75em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(270deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(270deg);
+            }
+            100%{
+                left: -0.25em;
+                opacity: 0;
+                transform: scale(0.3) rotate(270deg);
+            }
+        }
+        @keyframes obb5{
+            0%{
+                left: 4.25em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(-180deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(-180deg);
+            }
+            100%{
+                left: -0.45em;
+                opacity: 0;
+                transform: scale(0.3) rotate(-180deg);
+            }
+        }
+        @keyframes obb6{
+            0%{
+                left: 4.75em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(-90deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(-90deg);
+            }
+            100%{
+                left: -0.45em;
+                opacity: 0;
+                transform: scale(0.3) rotate(-90deg);
+            }
+        }
+        @keyframes obb7{
+            0%{
+                left: 5.25em;
+                opacity: 0;  /* 透明级别 */
+                transform: scale(0.3) rotate(-45deg);
+            }
+            25%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 1;
+                transform: scale(1) rotate(-45deg);
+            }
+            100%{
+                left: -0.35em;
+                opacity: 0;
+                transform: scale(0.3) rotate(-45deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="box1">
+            <div class="cov boo1 coo0">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+            <div class="cov boo2 coo1">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+            <div class="cov boo3 coo2">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+            <div class="cov boo4 cooz">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+
+            <div class="cov boo5 coox">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+
+            <div class="cov boo6 cooc">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+
+            <div class="cov boo7 coov">
+                <div class="bnm">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+                <div class="bnm bnm2">
+                    <span class="drop drop1"></span>
+                    <span class="drop drop2"></span>
+                    <span class="drop drop3"></span>
+                    <span class="drop drop4"></span>
+                    <span class="drop drop5"></span>
+                    <span class="drop drop6"></span>
+                    <span class="drop drop7"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

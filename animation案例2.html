@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 312px;
+            background-image:url("img2/walkingdead.png") ;
+            background-position:200px ;
+            animation: occ 2s infinite;
+
+            animation-timing-function: steps(10,start);
+            transform-origin:top left ;
+            margin: 100px auto;
+        }
+        @keyframes occ{
+            0%{
+                background-position-x:0px ;
+            }
+            100%{
+                background-position-x:-2000px ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
